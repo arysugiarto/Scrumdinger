@@ -12,7 +12,10 @@ struct ScrumdingerApp: App {
     var body: some Scene {
         WindowGroup {
 //            MeetingView()
-            ScrumsView(scrums: DailyScrum.sampleData)
+            NavigationView(){
+                ScrumsView(scrums: DailyScrum.sampleData)
+            }
+           
         }
     }
 }

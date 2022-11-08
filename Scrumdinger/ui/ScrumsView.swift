@@ -15,9 +15,18 @@ struct ScrumsView: View{
         List {
             ForEach(scrums){
                 scrums in
-                CardView(scrum: scrums)
-                    .listRowBackground(scrums.theme.mainColor)
+                NavigationLink(destination: DetailView(scrum: scrums)) {
+                    CardView(scrum: scrums)
+                }
+                .listRowBackground(scrums.theme.mainColor)
             }
+        }
+        .navigationTitle("Daily Scrum")
+        .toolbar{
+            Button(action: {}){
+                Image(systemName: "plus")
+            }
+            .accessibilityLabel("New Scrum")
         }
     }
 }
